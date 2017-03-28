@@ -19,7 +19,13 @@
       </ion-item>
     </ion-list>
 
-    <button ion-button color="primary" block>Entrar</button>
+    <button ion-button color="default-primary-color" block>Entrar</button>
   </form>
+
+  <ion-row>
+    <ion-col class="text-cadastrar">
+      Ainda não é cadastrado? <span (click)="goToCadastrarPage()" style="text-decoration: underline;">Cadastre-se!</span>
+    </ion-col>
+  </ion-row>
 
 </ion-content>

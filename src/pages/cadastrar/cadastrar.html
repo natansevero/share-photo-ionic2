@@ -1,12 +1,45 @@
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>cadastrar</ion-title>
-  </ion-navbar>
-
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="back-color">
+  <div class="logo">
+    SharePhoto
+  </div>
 
+  <form class="form-login">
+    <h5>Cadastre-se! Poste e veja fotos de seus amigos</h5>
+    <ion-list>
+      <ion-item class="color-forced">
+        <ion-input class="color-forced" type="email" placeholder="Endereço de e-mail"></ion-input>
+      </ion-item>
+      <ion-item class="color-forced">
+        <ion-input class="color-forced" type="text" placeholder="Nome"></ion-input>
+      </ion-item>
+      <ion-item class="color-forced">
+        <ion-input class="color-forced" type="text" placeholder="Nome de usuário"></ion-input>
+      </ion-item>
+      <ion-item class="color-forced">
+        <ion-input class="color-forced" type="password" placeholder="Senha"></ion-input>
+      </ion-item>
+      <ion-item class="color-forced">
+        <ion-label>Sexo</ion-label>
+        <ion-select>
+          <ion-option value="m">Masculino</ion-option>
+          <ion-option value="f">Feminino</ion-option>
+          <ion-option value="o">Outro</ion-option>
+        </ion-select>
+      </ion-item>
+
+    </ion-list>
+
+    <button ion-button color="default-primary-color" block>Cadastrar-se</button>
+  </form>
+
+  <ion-row>
+    <ion-col class="text-login">
+      Já possui conta? <span (click)="goBackLoginPage()" style="text-decoration: underline;">Faça Login!</span>
+    </ion-col>
+  </ion-row>
 </ion-content>

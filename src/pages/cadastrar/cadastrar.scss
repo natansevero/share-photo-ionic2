@@ -1,3 +1,32 @@
 page-cadastrar {
+  .back-color {
+    background-color: #00796B;
+  }
 
+  .logo {
+    width: auto;
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 5%;
+  }
+
+  .form-login {
+    margin-top: 20%;
+    text-align: center;
+    color: white;
+  }
+
+  // Classe para forçar cor de fundo em alguns componentes
+  .color-forced {
+    background-color: #00796B;
+  }
+
+  .text-login {
+    width: auto;
+    color: white;
+    text-align: center;
+    margin-top: 10%;
+  }
 }

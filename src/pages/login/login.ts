@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { CadastrarPage } from '../cadastrar/cadastrar';
 
 @Component({
   selector: 'page-login',
@@ -11,6 +12,10 @@ export class LoginPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
+  }
+
+  goToCadastrarPage() {
+    this.navCtrl.push(CadastrarPage);
   }
 
 }
