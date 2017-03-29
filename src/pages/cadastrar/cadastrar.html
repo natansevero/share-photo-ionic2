@@ -8,24 +8,25 @@
     SharePhoto
   </div>
 
-  <form class="form-login">
+  <!-- <form class="form-login"> -->
+  <div class="form-login">
     <h5>Cadastre-se! Poste e veja fotos de seus amigos</h5>
     <ion-list>
       <ion-item class="color-forced">
-        <ion-input class="color-forced" type="email" placeholder="Endereço de e-mail"></ion-input>
+        <ion-input class="color-forced" [(ngModel)]="email" type="email" placeholder="Endereço de e-mail"></ion-input>
       </ion-item>
       <ion-item class="color-forced">
-        <ion-input class="color-forced" type="text" placeholder="Nome"></ion-input>
+        <ion-input class="color-forced" [(ngModel)]="nome" type="text" placeholder="Nome"></ion-input>
       </ion-item>
       <ion-item class="color-forced">
-        <ion-input class="color-forced" type="text" placeholder="Nome de usuário"></ion-input>
+        <ion-input class="color-forced" [(ngModel)]="nome_usuario" type="text" placeholder="Nome de usuário"></ion-input>
       </ion-item>
       <ion-item class="color-forced">
-        <ion-input class="color-forced" type="password" placeholder="Senha"></ion-input>
+        <ion-input class="color-forced" [(ngModel)]="senha" type="password" placeholder="Senha"></ion-input>
       </ion-item>
       <ion-item class="color-forced">
         <ion-label>Sexo</ion-label>
-        <ion-select>
+        <ion-select [(ngModel)]="sexo">
           <ion-option value="m">Masculino</ion-option>
           <ion-option value="f">Feminino</ion-option>
           <ion-option value="o">Outro</ion-option>
@@ -34,8 +35,10 @@
 
     </ion-list>
 
-    <button ion-button color="default-primary-color" block>Cadastrar-se</button>
-  </form>
+    <button ion-button color="default-primary-color" (click)="cadastrarUsuario()" block>Cadastrar-se</button>
+  </div>
+
+  <!-- </form> -->
 
   <ion-row>
     <ion-col class="text-login">

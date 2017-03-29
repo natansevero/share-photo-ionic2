@@ -1,5 +1,6 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { HttpModule } from '@angular/http';
 import { MyApp } from './app.component';
 
 import { LoginPage } from '../pages/login/login';
@@ -12,6 +13,8 @@ import { PesquisarPage } from '../pages/pesquisar/pesquisar';
 import { PostarFotoPage } from '../pages/postar-foto/postar-foto';
 import { NotificacaoPage } from '../pages/notificacao/notificacao';
 import { PerfilPage } from '../pages/perfil/perfil';
+
+import { UsersService } from '../providers/users-service';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,7 @@ import { PerfilPage } from '../pages/perfil/perfil';
     PerfilPage
   ],
   imports: [
+    HttpModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -40,6 +44,9 @@ import { PerfilPage } from '../pages/perfil/perfil';
     NotificacaoPage,
     PerfilPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    UsersService
+  ]
 })
 export class AppModule {}
