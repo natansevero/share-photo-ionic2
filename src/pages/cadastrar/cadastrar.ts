@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams,ViewController } from 'ionic-angular';
+import { NavController, NavParams,ViewController, LoadingController, AlertController } from 'ionic-angular';
 import { UsersService } from '../../providers/users-service';
 
 @Component({
@@ -15,7 +15,8 @@ export class CadastrarPage {
   private sexo: String;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-              private viewCtrl: ViewController, private usersService: UsersService) {}
+              private viewCtrl: ViewController, private usersService: UsersService,
+              private loadingCtrl: LoadingController, private alertCtrl: AlertController) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CadastrarPage');
@@ -34,14 +35,33 @@ export class CadastrarPage {
       sexo: this.sexo
     }
 
+    let loader = this.loadingCtrl.create({
+      content: 'Espere um momento'
+    });
+    loader.present();
+
     this.usersService.cadastrarUsuarioService(usuario)
         .then(res => {
-          alert("Cadastrado com Sucesso!");
           console.log("Res:", res);
+
+          loader.dismiss();
+
+          let alert = this.alertCtrl.create({
+            title: 'Usuário criado com sucesso!',
+            buttons: ['OK']
+          });
+          alert.present();
+
+          this.viewCtrl.dismiss();
         })
         .catch(err => {
-          alert("Error");
           console.log("Err:", err);
+
+          let alert = this.alertCtrl.create({
+            title: 'Error ao cadastrar!',
+            buttons: ['OK']
+          });
+          alert.present();
         });
   }
 

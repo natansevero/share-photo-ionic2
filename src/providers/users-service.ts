@@ -5,7 +5,7 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class UsersService {
 
-  // private apiUri: String = 'https://share-photo-api-nodejs.herokuapp.com/users';
+  private apiUri = 'https://share-photo-api-nodejs.herokuapp.com/users';
   private headers = new Headers({"Content-Type": "application/json"});
 
   constructor(public http: Http) {
@@ -13,7 +13,7 @@ export class UsersService {
   }
 
   cadastrarUsuarioService(usuario) : Promise<any> {
-    return this.http.post(usuario, 'https://share-photo-api-nodejs.herokuapp.com/users', this.headers)
+    return this.http.post(this.apiUri, usuario, {headers: this.headers})
                     .toPromise()
                     .then(res => res)
                     .catch(err => err)
