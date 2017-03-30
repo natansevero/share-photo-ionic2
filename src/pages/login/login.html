@@ -8,19 +8,22 @@
     SharePhoto
   </div>
 
-  <form class="form-login">
+  <!-- <form class="form-login"> -->
+  <div class="form-login">
     <h5>Realize seu login!</h5>
     <ion-list>
       <ion-item class="color-forced">
-        <ion-input class="color-forced" type="text" placeholder="Nome de Usuário"></ion-input>
+        <ion-input class="color-forced" [(ngModel)]="nome_usuario" type="text" placeholder="Nome de Usuário"></ion-input>
       </ion-item>
       <ion-item class="color-forced">
-        <ion-input class="color-forced" type="password" placeholder="Senha"></ion-input>
+        <ion-input class="color-forced" [(ngModel)]="senha" type="password" placeholder="Senha"></ion-input>
       </ion-item>
     </ion-list>
 
-    <button ion-button color="default-primary-color" block>Entrar</button>
-  </form>
+    <button ion-button color="default-primary-color" (click)="autenticarUsuario()" block>Entrar</button>
+  </div>
+
+  <!-- </form> -->
 
   <ion-row>
     <ion-col class="text-cadastrar">
