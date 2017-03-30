@@ -5,6 +5,8 @@ import { CadastrarPage } from '../cadastrar/cadastrar';
 import { Storage } from '@ionic/storage';
 import { UsersService } from '../../providers/users-service';
 
+import { TabsPage } from '../tabs/tabs';
+
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html'
@@ -52,10 +54,12 @@ export class LoginPage {
         } else {
           this.storage.set('_id_usuario', res._body);
           this.storage.get('_id_usuario').then((value) => {
-            console.log(value);
+            console.log(JSON.parse(value));
           });
 
           this.storage.remove('_id_usuario');
+
+          this.navCtrl.push(TabsPage);
         }
       })
       .catch(err => {
