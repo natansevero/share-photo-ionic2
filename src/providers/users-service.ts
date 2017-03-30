@@ -5,7 +5,8 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class UsersService {
 
-  private apiUri = 'https://share-photo-api-nodejs.herokuapp.com/users';
+  // private apiUri = 'https://share-photo-api-nodejs.herokuapp.com/users';
+  private apiUri = 'http://localhost:3000/users';
   private headers = new Headers({"Content-Type": "application/json"});
 
   constructor(public http: Http) {

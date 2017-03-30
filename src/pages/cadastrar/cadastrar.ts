@@ -46,22 +46,27 @@ export class CadastrarPage {
 
           loader.dismiss();
 
-          let alert = this.alertCtrl.create({
-            title: 'Usuário criado com sucesso!',
-            buttons: ['OK']
-          });
-          alert.present();
-
-          this.viewCtrl.dismiss();
+          if(!res.ok) {
+            let alert = this.alertCtrl.create({
+              title: 'Erro ao cadastrar!',
+              buttons: ['OK']
+            });
+            alert.present();
+          } else {
+            let alert = this.alertCtrl.create({
+              title: 'Você foi cadastrado com sucesso!',
+              buttons: [{
+                  text: "Ok",
+                  handler: () => {
+                    this.viewCtrl.dismiss();
+                  }
+              }]
+            });
+            alert.present();
+          }
         })
         .catch(err => {
           console.log("Err:", err);
-
-          let alert = this.alertCtrl.create({
-            title: 'Error ao cadastrar!',
-            buttons: ['OK']
-          });
-          alert.present();
         });
   }
 
