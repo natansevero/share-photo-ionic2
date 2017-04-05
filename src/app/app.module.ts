@@ -2,6 +2,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { HttpModule } from '@angular/http';
 import { Storage } from '@ionic/storage';
+import { Camera } from '@ionic-native/camera';
 import { MyApp } from './app.component';
 
 import { LoginPage } from '../pages/login/login';
@@ -15,7 +16,10 @@ import { PostarFotoPage } from '../pages/postar-foto/postar-foto';
 import { NotificacaoPage } from '../pages/notificacao/notificacao';
 import { PerfilPage } from '../pages/perfil/perfil';
 
+import { DesejaPostarPage } from '../pages/deseja-postar/deseja-postar';
+
 import { UsersService } from '../providers/users-service';
+import { PostsService } from '../providers/posts-service';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,8 @@ import { UsersService } from '../providers/users-service';
     PesquisarPage,
     PostarFotoPage,
     NotificacaoPage,
-    PerfilPage
+    PerfilPage,
+    DesejaPostarPage
   ],
   imports: [
     HttpModule,
@@ -43,12 +48,15 @@ import { UsersService } from '../providers/users-service';
     PesquisarPage,
     PostarFotoPage,
     NotificacaoPage,
-    PerfilPage
+    PerfilPage,
+    DesejaPostarPage
   ],
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    Storage, 
-    UsersService
+    Storage,
+    Camera,
+    UsersService,
+    PostsService
   ]
 })
 export class AppModule {}

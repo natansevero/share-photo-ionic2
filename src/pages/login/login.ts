@@ -53,11 +53,11 @@ export class LoginPage {
           alert.present();
         } else {
           this.storage.set('_id_usuario', res._body);
-          this.storage.get('_id_usuario').then((value) => {
-            console.log(JSON.parse(value));
-          });
+          // this.storage.get('_id_usuario').then((value) => {
+          //   console.log(JSON.parse(value));
+          // });
 
-          this.storage.remove('_id_usuario');
+          // this.storage.remove('_id_usuario');
 
           this.navCtrl.push(TabsPage);
         }
