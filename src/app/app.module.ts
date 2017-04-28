@@ -17,6 +17,7 @@ import { NotificacaoPage } from '../pages/notificacao/notificacao';
 import { PerfilPage } from '../pages/perfil/perfil';
 
 import { DesejaPostarPage } from '../pages/deseja-postar/deseja-postar';
+import { EditarContaPage } from '../pages/editar-conta/editar-conta';
 
 import { UsersService } from '../providers/users-service';
 import { PostsService } from '../providers/posts-service';
@@ -32,7 +33,8 @@ import { PostsService } from '../providers/posts-service';
     PostarFotoPage,
     NotificacaoPage,
     PerfilPage,
-    DesejaPostarPage
+    DesejaPostarPage,
+    EditarContaPage
   ],
   imports: [
     HttpModule,
@@ -49,7 +51,8 @@ import { PostsService } from '../providers/posts-service';
     PostarFotoPage,
     NotificacaoPage,
     PerfilPage,
-    DesejaPostarPage
+    DesejaPostarPage,
+    EditarContaPage
   ],
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler},

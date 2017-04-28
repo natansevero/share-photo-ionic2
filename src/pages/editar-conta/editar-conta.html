@@ -1,0 +1,51 @@
+<ion-header>
+
+  <ion-navbar color="dark-primary-color">
+    <ion-title>Editar Conta</ion-title>
+
+    <ion-buttons right>
+      <button ion-button>Salvar</button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <div style="text-align: center">
+    <img width="100" height="100" src="http://www.comofazer.net/wp-content/uploads/2015/10/pessoa-vermelha-de-vergonha-02.png">
+  </div>
+
+  <div style="text-align: center">
+    <button ion-button outline color="default-primary-color">Alterar foto</button>
+  </div>
+
+  <div class="form-login">
+    <ion-list>
+      <ion-item class="color-forced">
+        <ion-input class="color-forced" [(ngModel)]="nome" type="text" placeholder="Nome"></ion-input>
+      </ion-item>
+      <ion-item class="color-forced">
+        <ion-textarea rows="3" class="color-forced" [(ngModel)]="descricao" placeholder="Seu descrição..."></ion-textarea>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <hr>
+
+  <h6>Opções de conta: (Excluir Conta)</h6>
+  <p style="text-align: center">Informe seu e-mail e senha e toque em Excluir Conta para concluir o processo</p>
+
+  <div class="form-login">
+    <ion-list>
+      <ion-item class="color-forced">
+        <ion-input class="color-forced" [(ngModel)]="email" type="email" placeholder="Email"></ion-input>
+      </ion-item>
+      <ion-item class="color-forced">
+        <ion-input class="color-forced" [(ngModel)]="senha" type="password" placeholder="Senha"></ion-input>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div style="text-align: center">
+    <button ion-button color="danger">Excluir Conta</button>
+  </div>
+</ion-content>

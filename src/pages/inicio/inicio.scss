@@ -1,3 +1,28 @@
 page-inicio {
+  #foto_perfil {
+    border-radius: 10px;
+  }
 
+  .foto_user {
+    text-align: center !important;
+    margin-bottom: -4%;
+  }
+
+  .values_post {
+    font-weight: bold;
+    font-size: 12px;
+    margin-left: 2%;
+  }
+
+  .like-button {
+    width: 10px !important;
+  }
+
+  .comment {
+    font-size: 12px;
+  }
+
+  .send-comment {
+    margin-left: -50%;
+  }
 }
