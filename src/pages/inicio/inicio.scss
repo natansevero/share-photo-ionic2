@@ -5,7 +5,12 @@ page-inicio {
 
   .foto_user {
     text-align: center !important;
-    margin-bottom: -4%;
+  }
+
+  .desc-picture {
+    margin: auto 2%;
+    font-weight: bold;
+    text-align: justify;
   }
 
   .values_post {
@@ -19,7 +24,7 @@ page-inicio {
   }
 
   .comment {
-    font-size: 12px;
+    font-size: 10px;
   }
 
   .send-comment {

@@ -10,8 +10,8 @@
 <ion-content>
   <ion-searchbar (ionInput)="getUsuarios($event)"></ion-searchbar>
   <ion-list>
-    <ion-item *ngFor="">
-      <!-- {{ item }} -->
+    <ion-item *ngFor="let user of users">
+      {{ user.nome_usuario }}
     </ion-item>
   </ion-list>
 </ion-content>

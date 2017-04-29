@@ -26,4 +26,11 @@ export class UsersService {
                     .then(res => res)
                     .catch(err => err)
   }
+
+  getUsuariosService() : Promise<any> {
+    return this.http.get(`${this.apiUri}/users`)
+                    .toPromise()
+                    .then(res => res)
+                    .catch(err => err)
+  }
 }

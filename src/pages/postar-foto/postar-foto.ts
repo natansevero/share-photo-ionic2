@@ -23,7 +23,8 @@ export class PostarFotoPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad PostarFotoPage');
     this.storage.get('_id_usuario').then(value => {
-      this.id = JSON.parse(value);
+      let user = JSON.parse(value);
+      this.id = user._id;
     });
   }
 
