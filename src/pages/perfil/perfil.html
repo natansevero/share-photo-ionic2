@@ -1,7 +1,7 @@
 <ion-header>
 
   <ion-navbar color="dark-primary-color">
-    <ion-title>user</ion-title>
+    <ion-title>{{ user.nome_usuario }}</ion-title>
 
     <ion-buttons right>
       <button ion-button (click)="pageEditarConta()"><ion-icon name="more"></ion-icon></button>
@@ -15,20 +15,22 @@
 
   <ion-row  style="text-align: center; padding-right: 3%; margin-top: 3%">
     <ion-col width-33>
-      <img id="foto_perfil" src="http://img.ibxk.com.br/2015/12/18/18122125441234.jpg?w=1040" width="80" height="90">
+      <span *ngIf="user.foto_perfil">
+        <img id="foto_perfil" [src]="user.foto_perfil" width="80" height="90">
+      </span>
     </ion-col>
     <ion-col width-67>
       <ion-row>
         <ion-col width-33>
-          <span class="quant">23</span> <br>
+          <span class="quant">{{ user.postagens.length }}</span> <br>
           <span class="texto-quant">Publica...</span>
         </ion-col>
         <ion-col width-33>
-          <span class="quant">345</span> <br>
+          <span class="quant">{{ user.seguidores.length }}</span> <br>
           <span class="texto-quant">Segui...</span>
         </ion-col>
         <ion-col width-33>
-          <span class="quant">467</span> <br>
+          <span class="quant">{{ user.seguindo.length }}</span> <br>
           <span class="texto-quant">Seguindo</span>
         </ion-col>
       </ion-row>
@@ -40,38 +42,27 @@
 
   <div style="padding: 5% 7% 0 7%;">
     <ion-row>
-      nome
+      {{ user.nome }}
     </ion-row>
 
     <ion-row>
-      Descricao
+      {{ user.descricao }}
     </ion-row>
   </div>
 
-  <div style="margin-top: 10%">
-    <ion-row>
-      <ion-col width-33>
-        <img height="100" src="http://viverdeinvestimento.com/wp-content/uploads/2016/01/medo-825x542.jpg">
-      </ion-col>
-      <ion-col width-33>
-        <img height="100" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQLr-vn2zr7z4E9o4NVJZn_14XBQgZ2I-NuuM4PFiAHnlv6CJZk">
-      </ion-col>
-      <ion-col width-33>
-        <img height="100" src="http://img.ibxk.com.br/2015/12/18/18122258433242.jpg?w=1040">
-      </ion-col>
-    </ion-row>
+  <div style="margin-top: 10%;">
 
-    <ion-row>
-      <ion-col width-33>
-        <img height="100" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ56gglwuJkQNiDXxLQ6OqVbIiCYu0NKza8pkYOqVpg9JZhYXOt">
+    <!-- <ion-row >
+      <ion-col width-100>
+
       </ion-col>
-      <ion-col width-33>
-        <img height="100" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ56gglwuJkQNiDXxLQ6OqVbIiCYu0NKza8pkYOqVpg9JZhYXOt">
-      </ion-col>
-      <ion-col width-33>
-        <img height="100" src="http://img.ibxk.com.br/2015/12/18/18122258433242.jpg?w=1040">
-      </ion-col>
-    </ion-row>
+    </ion-row> -->
+
+    <ion-list>
+      <ion-item style="text-align: center; background-color: #B2DFDB;" *ngFor="let post of user.postagens">
+        <img height="200" [src]="post.foto">
+      </ion-item>
+    </ion-list>
   </div>
 
 
