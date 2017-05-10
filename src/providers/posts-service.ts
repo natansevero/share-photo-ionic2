@@ -20,4 +20,11 @@ export class PostsService {
              .catch(err => err)
   }
 
+  getFeedService(id_usuario) : Promise<any> {
+    return this.http.get(`${this.apiUri}/posts/feed/${id_usuario}`)
+            .toPromise()
+            .then(res => res)
+            .catch(err => err)
+  }
+
 }
